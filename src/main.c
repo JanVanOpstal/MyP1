@@ -153,6 +153,7 @@ void app_main(void) {
             ESP_LOGI(TAG, "Connected to WiFi successfully.");
             // Continue normal operation as STA
             wifi_config_server_start();
+            ESP_LOGI(TAG, "Started WiFi Config Server in STA mode.");
             while (1) {
                 vTaskDelay(pdMS_TO_TICKS(500));
             }
@@ -164,6 +165,7 @@ void app_main(void) {
 
     wifi_init_softap();
     wifi_config_server_start();
+    ESP_LOGI(TAG, "Started WiFi Config Server in AP mode.");
 
     while (1) {
         vTaskDelay(pdMS_TO_TICKS(500));
